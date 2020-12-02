@@ -3,9 +3,10 @@ import React from 'react'
 const Event = ({ dispatch, event }) => {
     const id = event.id
     const handleClickDeleteButton = () => {
-        const result = window.confirm(`イベント(id=${id})を本当に削除しても良いですか？`)
-        if (result) dispatch({ type: 'DELETE_EVENT', id })
-    }
+    const result = window.confirm(`イベント(id=${id})を本当に削除しても良いですか？`)
+    if (result) dispatch({ type: 'DELETE_EVENT', id })
+}
+
     return (
     <tr>
         <td>{id}</td>
@@ -13,7 +14,7 @@ const Event = ({ dispatch, event }) => {
         <td>{event.body}</td>
         <td><button type="button" className="btn btn-danger" onClick={handleClickDeleteButton}>削除</button></td>
     </tr>
-    )
+)
 }
-export default Event
 
+export default Event
